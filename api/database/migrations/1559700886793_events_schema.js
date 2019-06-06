@@ -12,10 +12,13 @@ class EventsSchema extends Schema {
         .unsigned()
         .references('id')
         .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       table
         .string('title', 25)
         .notNullable()
         .unique()
+      table.text('description').notNullable()
       table
         .string('location', 80)
         .notNullable()

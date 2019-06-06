@@ -1,4 +1,4 @@
-:relaxed: # API Calendário :relaxed:
+# :relaxed: API Calendário :relaxed:
 
 ### Explicações
 
