@@ -1,35 +1,18 @@
 'use strict'
 
-/** @typedef {import('@adonisjs/framework/src/Request')} Request */
-/** @typedef {import('@adonisjs/framework/src/Response')} Response */
-/** @typedef {import('@adonisjs/framework/src/View')} View */
+const Event = use('App/Models/Event')
 
-/**
- * Resourceful controller for interacting with events
- */
 class EventController {
   /**
-   * Show a list of all events.
+   * Show a list of all events
    * GET events
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-  }
+    const events = await Event.query()
+      .with('user')
+      .fetch()
 
-  /**
-   * Render a form to be used for creating a new event.
-   * GET events/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create ({ request, response, view }) {
+    return events
   }
 
   /**
@@ -40,7 +23,23 @@ class EventController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store ({ request, response, auth }) {
+    const data = request.only(['title', 'location', 'date'])
+
+    try {
+      await Event.findByOrFail('date', data.date)
+
+      return response.status(401).send({
+        error: {
+          message:
+            'Não foi possível criar o evento, já existe um evento no mesmo horário'
+        }
+      })
+    } catch (err) {
+      const event = await Event.create({ ...data, user_id: auth.user.id })
+
+      return event
+    }
   }
 
   /**
@@ -52,19 +51,20 @@ class EventController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
-  }
+  async show ({ params, response, auth }) {
+    const event = await Event.findOrFail(params.id)
 
-  /**
-   * Render a form to update an existing event.
-   * GET events/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
+    if (event.user_id !== auth.user.id) {
+      return response.status(401).send({
+        error: {
+          message: 'Só o criador pode ter acesso a esse evento'
+        }
+      })
+    }
+
+    await event.load('user')
+
+    return event
   }
 
   /**
@@ -75,8 +75,7 @@ class EventController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ({ params, request, response }) {
-  }
+  async update ({ params, request, response }) {}
 
   /**
    * Delete a event with id.
@@ -86,7 +85,18 @@ class EventController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ({ params, response, auth }) {
+    const event = await Event.findOrFail(params.id)
+
+    if (event.user_id !== auth.user.id) {
+      return response.status(401).send({
+        error: {
+          message: 'Só o criador pode ter acesso a esse evento'
+        }
+      })
+    }
+
+    await event.delete()
   }
 }
 

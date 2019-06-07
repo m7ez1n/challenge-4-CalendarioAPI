@@ -14,15 +14,8 @@ class EventsSchema extends Schema {
         .inTable('users')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
-      table
-        .string('title', 25)
-        .notNullable()
-        .unique()
-      table.text('description').notNullable()
-      table
-        .string('location', 80)
-        .notNullable()
-        .unique()
+      table.string('title').notNullable()
+      table.string('location').notNullable()
       table.timestamp('date')
       table.timestamps()
     })
