@@ -15,43 +15,43 @@ pronta.
 
 ## Requisitos Funcionais :confused:
 
-- [ ] O usuário deve poder criar uma conta com nome, e-mail e senha;
-- [ ] O usuário deve poder se autenticar na aplicação com e-mail e senha;
-- [ ] O usuário deve poder alterar seu nome e senha informando a
+- [x] O usuário deve poder criar uma conta com nome, e-mail e senha;
+- [x] O usuário deve poder se autenticar na aplicação com e-mail e senha;
+- [x] O usuário deve poder alterar seu nome e senha informando a
       senha antiga, a senha nova e a confirmação da senha nova;
-- [ ] O usuário deve poder cadastrar eventos em seu calendário com
+- [x] O usuário deve poder cadastrar eventos em seu calendário com
       título, localização, data e horário;
-- [ ] O usuário deve poder listar os eventos cadastrados por data;
-- [ ] O usuário deve poder excluir um compromisso;
-- [ ] O usário deve poder compartilhar um compromisso informando o
+- [x] O usuário deve poder listar os eventos cadastrados por data;
+- [x] O usuário deve poder excluir um compromisso;
+- [x] O usuário deve poder compartilhar um compromisso informando o
       e-mail do destinatário. Assim que compartilhado, o destinatário
       deve receber todas informações do evento por e-mail;
 
 ## Requisitos não funcionais :sweat_smile:
 
-- [ ] Utilize banco de dados SQL;
-- [ ] Utilize fila com Redis para programar o envio de e-mails do
+- [x] Utilize banco de dados SQL;
+- [x] Utilize fila com Redis para programar o envio de e-mails do
       compartilhamento de compromisso;
 
 ## Regras de negócio
 
-- [ ] O e-mail do usuário é único;
-- [ ] O usuário não pode alterar seu e-mail;
-- [ ] Não deve ser possível cadastrar dois eventos no mesmo horário
+- [x] O e-mail do usuário é único;
+- [x] O usuário não pode alterar seu e-mail;
+- [x] Não deve ser possível cadastrar dois eventos no mesmo horário
       no calendário de um usuário;
-- [ ] O usuário só pode ver/editar/deletar seus eventos;
-- [ ] O usuário não pode editar/deletar um evento que já passou;
-- [ ] Todos cadastros devem possuir validação de campos com
+- [x] O usuário só pode ver/editar/deletar seus eventos;
+- [x] O usuário não pode editar/deletar um evento que já passou;
+- [x] Todos cadastros devem possuir validação de campos com
       mensagens legíveis;
 
 # Qualquer contribuição é bem vinda, e eu agradeço :heart_eyes: :heartbeat:
 
 # Acessem a RocketSeat e a He4rtDevs: :exclamation: :purple_heart:
 
-[He4rt](discord.io/He4rt)
-[Twitter](https://twitter.com/He4rtDevs)
+[Discord He4rt](discord.io/He4rt)
+
+[Twitter He4rt](https://twitter.com/He4rtDevs)
 
 [RocketSeat](https://rocketseat.com.br/)
 
 [MyTwitter](https://twitter.com/m7Aei_He4rt)
-
