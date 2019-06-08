@@ -21,7 +21,7 @@ pronta.
       senha antiga, a senha nova e a confirmação da senha nova;
 - [x] O usuário deve poder cadastrar eventos em seu calendário com
       título, localização, data e horário;
-- [ ] O usuário deve poder listar os eventos cadastrados por data;
+- [x] O usuário deve poder listar os eventos cadastrados por data;
 - [x] O usuário deve poder excluir um compromisso;
 - [ ] O usário deve poder compartilhar um compromisso informando o
       e-mail do destinatário. Assim que compartilhado, o destinatário
@@ -41,7 +41,7 @@ pronta.
       no calendário de um usuário;
 - [x] O usuário só pode ver/editar/deletar seus eventos;
 - [ ] O usuário não pode editar/deletar um evento que já passou;
-- [ ] Todos cadastros devem possuir validação de campos com
+- [x] Todos cadastros devem possuir validação de campos com
       mensagens legíveis;
 
 # Qualquer contribuição é bem vinda, e eu agradeço :heart_eyes: :heartbeat:

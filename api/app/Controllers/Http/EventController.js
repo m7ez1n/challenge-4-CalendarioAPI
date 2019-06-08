@@ -8,9 +8,15 @@ class EventController {
    * GET events
    */
   async index ({ request, response, view }) {
-    const events = await Event.query()
-      .with('user')
-      .fetch()
+    const { page, date } = request.get()
+
+    let query = Event.query().with('user')
+
+    if (date) {
+      query = query.whereRaw(`"when"::date = ?`, date)
+    }
+
+    const events = await query.paginate(page)
 
     return events
   }
