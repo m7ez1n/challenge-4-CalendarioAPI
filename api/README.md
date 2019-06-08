@@ -40,7 +40,7 @@ pronta.
 - [x] Não deve ser possível cadastrar dois eventos no mesmo horário
       no calendário de um usuário;
 - [x] O usuário só pode ver/editar/deletar seus eventos;
-- [ ] O usuário não pode editar/deletar um evento que já passou;
+- [x] O usuário não pode editar/deletar um evento que já passou;
 - [x] Todos cadastros devem possuir validação de campos com
       mensagens legíveis;
 
