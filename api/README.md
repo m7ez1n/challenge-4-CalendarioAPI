@@ -23,14 +23,14 @@ pronta.
       título, localização, data e horário;
 - [x] O usuário deve poder listar os eventos cadastrados por data;
 - [x] O usuário deve poder excluir um compromisso;
-- [ ] O usário deve poder compartilhar um compromisso informando o
+- [x] O usuário deve poder compartilhar um compromisso informando o
       e-mail do destinatário. Assim que compartilhado, o destinatário
       deve receber todas informações do evento por e-mail;
 
 ## Requisitos não funcionais :sweat_smile:
 
 - [x] Utilize banco de dados SQL;
-- [ ] Utilize fila com Redis para programar o envio de e-mails do
+- [x] Utilize fila com Redis para programar o envio de e-mails do
       compartilhamento de compromisso;
 
 ## Regras de negócio
@@ -48,8 +48,9 @@ pronta.
 
 # Acessem a RocketSeat e a He4rtDevs: :exclamation: :purple_heart:
 
-[He4rt](discord.io/He4rt)
-[Twitter](https://twitter.com/He4rtDevs)
+[Discord He4rt](discord.io/He4rt)
+
+[Twitter He4rt](https://twitter.com/He4rtDevs)
 
 [RocketSeat](https://rocketseat.com.br/)
 
